@@ -35,7 +35,12 @@ function paintToCanvas() {
   canvas.width = width;
   canvas.height = height;
 
-  console.log(width, height);
+  // The code below will  at intervals paint video to canvas
+  setInterval(() => {
+    ctx.drawImage(video, 0, 0, width, height);
+  }, 16)
 }
+
+
 
 getVideo();
