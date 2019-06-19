@@ -1,0 +1,22 @@
+{
+  "name": "gum",
+  "version": "1.0.0",
+  "description": "A simple photo booth feature using javasctipt",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "browser-sync start --server --files \"*.css, *.html, *.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.5 <2.23.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Frankie-B/unreal-webcam-fun.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Frankie-B/unreal-webcam-fun/issues"
+  },
+  "homepage": "https://github.com/Frankie-B/unreal-webcam-fun#readme"
+}
