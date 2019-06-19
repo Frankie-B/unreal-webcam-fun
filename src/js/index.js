@@ -28,4 +28,14 @@ function getVideo() {
     });
 }
 
+// The code below will take the live stream video and paint it to canvas
+function paintToCanvas() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+  canvas.width = width;
+  canvas.height = height;
+
+  console.log(width, height);
+}
+
 getVideo();
