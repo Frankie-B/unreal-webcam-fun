@@ -41,6 +41,10 @@ function paintToCanvas() {
   }, 16)
 }
 
-// The below function will take a snapshot of the 
+// The below function will take a snapshot of the video stream
+function takePhoto() {
+  snap.currentTime = 0;
+  snap.play();
+}
 
 getVideo();
