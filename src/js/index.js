@@ -41,6 +41,6 @@ function paintToCanvas() {
   }, 16)
 }
 
-
+// The below function will take a snapshot of the 
 
 getVideo();
