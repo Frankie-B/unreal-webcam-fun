@@ -38,7 +38,18 @@ function paintToCanvas() {
   // The code below will  at intervals paint video to canvas
   setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height);
-  }, 16)
+    // take the pixels out
+    let pixels = ctx.getImageData(0, 0, width, height);
+    // mess with them
+    // pixels = redEffect(pixels);
+
+    pixels = rgbSplit(pixels);
+    // ctx.globalAlpha = 0.8;
+
+    // pixels = greenScreen(pixels);
+    // put them back
+    ctx.putImageData(pixels, 0, 0);
+  }, 16);
 }
 
 // The below function will take a snapshot of the video stream
@@ -47,7 +58,7 @@ function takePhoto() {
   snap.play();
 
   // take the data out of the canvas
-  const data = canvas.toDataURL('image/jpeg');
+  const data = canvas.toDataURL('image/jpeg'); // Will return a base64 (text based) representation of the photo
   const link = document.createElement('a');
   link.href = data;
   link.setAttribute('download', 'handsome');
