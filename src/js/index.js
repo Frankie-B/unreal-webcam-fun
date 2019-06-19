@@ -36,7 +36,7 @@ function paintToCanvas() {
   canvas.height = height;
 
   // The code below will  at intervals paint video to canvas
-  setInterval(() => {
+  return setInterval(() => {
     ctx.drawImage(video, 0, 0, width, height);
     // take the pixels out
     let pixels = ctx.getImageData(0, 0, width, height);
@@ -64,6 +64,16 @@ function takePhoto() {
   link.setAttribute('download', 'handsome');
   link.innerHTML = `<img src="${data}" alt="Handsome Man" />`;
   strip.insertBefore(link, strip.firstChild);
+}
+
+// The below code will add a red filter effect
+function redEffect(pixels) {
+  for (let i = 0; i < pixels.data.length; i+=4) {
+    pixels.data[i + 0] = pixels.data[i + 0] + 200; // RED
+    pixels.data[i + 1] = pixels.data[i + 1] - 50; // GREEN
+    pixels.data[i + 2] = pixels.data[i + 2] * 0.5; // Blue
+  }
+  return pixels;
 }
 
 getVideo();
